@@ -4,9 +4,10 @@
     'name' : 'Account Paid Bills',
     'version' : '1.0',
     # 'category': '',
-    'depends' : ['account'],
+    'depends' : ['account',],
     'data': [
-
+        'security/ir.model.access.csv',
+        'wizards/paid_bills_views.xml',
     ],
     'installable': True,
     'application': True,

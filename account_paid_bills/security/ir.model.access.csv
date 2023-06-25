@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_paid_bills_wizard,account.paid.bills.wizard,model_paid_bills,account.group_account_invoice,1,1,1,1
