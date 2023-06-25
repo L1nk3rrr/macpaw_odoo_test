@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+            <record id="view_paid_bills_wizard" model="ir.ui.view">
+            <field name="name">paid.bills.wizard.view</field>
+            <field name="model">paid.bills</field>
+            <field name="arch" type="xml">
+                <form string="Paid Bills">
+                    <group>
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                    </group>
+                    <footer>
+                        <button string='View Bills' name="view_paid_bills" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="paid_bills_action" model="ir.actions.act_window">
+            <field name="name">Paid Bills</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">paid.bills</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_paid_bills_wizard"/>
+            <field name="target">new</field>
+            <field name="context">{}</field>
+        </record>
+
+        <menuitem id="menu_paid_bills"
+            name="Paid Bills"
+            parent="account.menu_finance_payables"
+            sequence="1"
+            action="paid_bills_action"
+            groups="account.group_account_invoice"/>
+
+    </data>
+</odoo>
